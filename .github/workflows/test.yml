@@ -33,9 +33,9 @@ jobs:
           sudo mysql -u$DB_USER -p$DB_PASSWORD $DB_DATABASE < ./bills.sql
       - name: Execute SQL queries in answer.sql and capture output
         run: |
-          # Check if the answers.sql file is empty
-          if [ ! -s ./answers.sql ]; then
-            echo "The answers.sql file is empty. Failing the workflow."
+          # Check if the answer.sql file is empty
+          if [ ! -s ./answer.sql ]; then
+            echo "The answer.sql file is empty. Failing the workflow."
             exit 1
           fi
           sudo mysql -u$DB_USER -p$DB_PASSWORD $DB_DATABASE < ./answer.sql
